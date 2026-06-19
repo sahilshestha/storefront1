@@ -1,0 +1,140 @@
+{% extends 'adminbase.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+
+    <h1>Admin Dashboard</h1>
+
+    <p>
+        Welcome back! Here's what's happening in your EMS platform.
+    </p>
+
+</section>
+
+<!-- Statistics -->
+
+<section class="stats-grid">
+
+    <div class="card">
+        <i class="fa-solid fa-users"></i>
+        <h3>2,540</h3>
+        <p>Total Users</p>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-calendar-days"></i>
+        <h3>320</h3>
+        <p>Total Events</p>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-ticket"></i>
+        <h3>5,890</h3>
+        <p>Total Bookings</p>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-dollar-sign"></i>
+        <h3>$89,400</h3>
+        <p>Total Revenue</p>
+    </div>
+
+</section>
+
+<!-- Status Cards -->
+
+<section class="status-grid">
+
+    <div class="status-card pending">
+        <h2>45</h2>
+        <p>Pending Approvals</p>
+    </div>
+
+    <div class="status-card active">
+        <h2>89</h2>
+        <p>Active Events</p>
+    </div>
+
+    <div class="status-card upcoming">
+        <h2>120</h2>
+        <p>Upcoming Events</p>
+    </div>
+
+    <div class="status-card cancelled">
+        <h2>10</h2>
+        <p>Cancelled Events</p>
+    </div>
+
+</section>
+
+<!-- Charts -->
+
+<section class="chart-grid">
+
+    <div class="chart-card">
+        <h3>Revenue Analytics</h3>
+        <canvas id="revenueChart"></canvas>
+    </div>
+
+    <div class="chart-card">
+        <h3>Booking Trends</h3>
+        <canvas id="bookingChart"></canvas>
+    </div>
+
+</section>
+
+<!-- Tables -->
+
+<section class="table-grid">
+
+    <div class="table-card">
+
+        <h3>Top Organizers</h3>
+
+        <table>
+
+            <tr>
+                <th>Name</th>
+                <th>Events</th>
+            </tr>
+
+            <tr>
+                <td>Dream Events</td>
+                <td>34</td>
+            </tr>
+
+            <tr>
+                <td>Prime Organizers</td>
+                <td>28</td>
+            </tr>
+
+            <tr>
+                <td>Elite Planners</td>
+                <td>22</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="table-card">
+
+        <h3>System Alerts</h3>
+
+        <ul class="alerts">
+
+            <li>3 Failed Stripe Payments</li>
+            <li>2 Refund Requests Pending</li>
+            <li>1 Disputed Transaction</li>
+            <li>5 Events Awaiting Approval</li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,745 @@
+{% extends 'hotelbase.html' %}
+{% load static %}
+{% block content %}
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 2: HERO SECTION
+       Full viewport image with animated zoom-out on load.
+       ══════════════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg" id="heroBg"></div>
+    <div class="hero__overlay"></div>
+
+    <div class="container">
+      <div class="hero__content">
+
+        <p class="hero__eyebrow">Pokhara, Nepal</p>
+
+        <h1 class="hero__title">
+          Where <em>Stillness</em><br>Becomes Luxury
+        </h1>
+
+        <p class="hero__desc">
+          Nestled at the edge of Phewa Lake with unobstructed Annapurna views.
+          Experience a resort that disappears into the landscape it inhabits.
+        </p>
+
+        <div class="hero__cta">
+          <a href="#booking" class="btn btn--gold">Check Availability</a>
+          <a href="#rooms" class="btn btn--outline-light">Explore Rooms</a>
+        </div>
+
+        <div class="hero__rating">
+          <span class="hero__stars">★★★★★</span>
+          <span class="hero__rating-text">4.9 · 1,240 verified reviews · Forbes Travel Guide</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END HERO -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 3: BOOKING BAR
+       Date / guest search form pinned below the hero.
+       ══════════════════════════════════════════════════════════ -->
+  <div class="booking-bar" id="booking">
+    <form class="booking-bar__form" id="bookingForm" novalidate>
+
+      <div class="booking-field">
+        <label class="booking-field__label" for="checkin">Check-In</label>
+        <input class="booking-field__input" type="date" id="checkin" name="checkin" required />
+      </div>
+
+      <div class="booking-field">
+        <label class="booking-field__label" for="checkout">Check-Out</label>
+        <input class="booking-field__input" type="date" id="checkout" name="checkout" required />
+      </div>
+
+      <div class="booking-field">
+        <label class="booking-field__label" for="guests">Guests</label>
+        <select class="booking-field__select" id="guests" name="guests" required>
+          <option value="">Select guests</option>
+          <option value="1">1 Adult</option>
+          <option value="2">2 Adults</option>
+          <option value="2c">2 Adults + 1 Child</option>
+          <option value="3">3 Adults</option>
+          <option value="4">4 Adults</option>
+        </select>
+      </div>
+
+      <div class="booking-field">
+        <label class="booking-field__label" for="roomtype">Room Type</label>
+        <select class="booking-field__select" id="roomtype" name="roomtype">
+          <option value="">Any room</option>
+          <option value="deluxe">Deluxe Lake View</option>
+          <option value="suite">Himalaya Suite</option>
+          <option value="villa">Private Villa</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn--gold" style="white-space:nowrap; height:fit-content; align-self:end;">
+        Search Rooms
+      </button>
+
+    </form>
+
+    <!-- Shown after form submits successfully -->
+    <p class="booking-success" id="bookingSuccess">
+      ✦ Availability found — scroll down to select your room and complete your reservation.
+    </p>
+  </div>
+  <!-- END BOOKING BAR -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 4: FEATURES STRIP
+       Four quick trust signals below the booking bar.
+       ══════════════════════════════════════════════════════════ -->
+  <div class="features">
+    <div class="container">
+      <div class="features__grid">
+
+        <div class="feature-item">
+          <span class="feature-item__icon">🏔️</span>
+          <div>
+            <div class="feature-item__title">Himalaya Views</div>
+            <div class="feature-item__desc">Annapurna range from every room</div>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <span class="feature-item__icon">🧖</span>
+          <div>
+            <div class="feature-item__title">Award-Winning Spa</div>
+            <div class="feature-item__desc">Ayurvedic & alpine treatments</div>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <span class="feature-item__icon">🍽️</span>
+          <div>
+            <div class="feature-item__title">Farm-to-Table Dining</div>
+            <div class="feature-item__desc">Three restaurants on site</div>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <span class="feature-item__icon">🚗</span>
+          <div>
+            <div class="feature-item__title">Private Transfers</div>
+            <div class="feature-item__desc">Airport & city shuttles included</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- END FEATURES STRIP -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 5: ABOUT SECTION
+       Image collage on left, text + stats on right.
+       ══════════════════════════════════════════════════════════ -->
+  <section class="about section-pad" id="about">
+    <div class="container">
+      <div class="about__grid">
+
+        <!-- Image collage -->
+        <div>
+          <div class="about__images">
+            <div class="about__img-main">
+              <img
+                src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=700&auto=format&fit=crop"
+                alt="Aurum Resort exterior overlooking Phewa Lake"
+                loading="lazy"
+              />
+            </div>
+            <div class="about__img-sm">
+              <img
+                src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=400&auto=format&fit=crop"
+                alt="Spa treatment room"
+                loading="lazy"
+              />
+            </div>
+            <div class="about__img-sm">
+              <img
+                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&auto=format&fit=crop"
+                alt="Fine dining restaurant"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <!-- Floating badge -->
+          <div class="about__badge">
+            <div class="about__badge-num">24</div>
+            <div class="about__badge-text">Years of Excellence</div>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div>
+          <p class="eyebrow">Our Story</p>
+          <h2 class="display-title">A Sanctuary Built for the <em>Thoughtful</em> Traveller</h2>
+          <div class="rule"></div>
+          <p class="body-lead">
+            Opened in 2001 on the northeastern shore of Phewa Lake, Aurum was conceived
+            as a counterpoint to bustle — a place where architecture defers to landscape,
+            and service anticipates without intruding.
+          </p>
+          <p style="color:var(--clr-muted); font-size:0.9rem; font-weight:300; margin-bottom:var(--space-lg);">
+            Every wing faces the Annapurna range. Every room uses locally quarried stone
+            and hand-loomed textiles. And our kitchen grows 60% of what it serves in the
+            walled garden behind the main lodge.
+          </p>
+          <a href="#rooms" class="btn btn--dark">View Our Rooms</a>
+
+          <div class="about__awards">
+            <div class="award"><span class="award__icon">🏆</span> Forbes Travel Guide 2024</div>
+            <div class="award"><span class="award__icon">🌿</span> Green Globe Certified</div>
+            <div class="award"><span class="award__icon">⭐</span> Condé Nast Traveller Top 50</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END ABOUT -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 6: ROOMS SECTION
+       Three room types displayed as bookable cards.
+       ══════════════════════════════════════════════════════════ -->
+  <section class="rooms section-pad" id="rooms">
+    <div class="container">
+
+      <div class="rooms__header">
+        <div>
+          <p class="eyebrow">Accommodation</p>
+          <h2 class="display-title" style="margin-bottom:0;">Rooms &amp; Suites</h2>
+        </div>
+        <a href="#booking" class="btn btn--outline-dark btn--sm">Check Availability</a>
+      </div>
+
+      <div class="rooms__grid">
+
+        <!-- Room 1 -->
+        <div class="room-card">
+          <div class="room-card__img-wrap">
+            <span class="room-card__tag">Best Seller</span>
+            <img
+              src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=700&auto=format&fit=crop"
+              alt="Deluxe Lake View room"
+              loading="lazy"
+            />
+          </div>
+          <div class="room-card__body">
+            <div class="room-card__name">Deluxe Lake View</div>
+            <p class="room-card__desc">
+              45 m² of calm. King bed, private balcony over the lake, and a soaking tub
+              positioned to catch the sunset.
+            </p>
+            <div class="room-card__amenities">
+              <span class="amenity"><span class="amenity__icon">🛏️</span> King Bed</span>
+              <span class="amenity"><span class="amenity__icon">🛁</span> Soaking Tub</span>
+              <span class="amenity"><span class="amenity__icon">📶</span> High-Speed WiFi</span>
+              <span class="amenity"><span class="amenity__icon">🌅</span> Lake Balcony</span>
+            </div>
+            <div class="room-card__footer">
+              <div>
+                <div class="room-card__price-label">From</div>
+                <div class="room-card__price">$280 <span>/ night</span></div>
+              </div>
+              <a href="#booking" class="btn btn--gold btn--sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room 2 -->
+        <div class="room-card">
+          <div class="room-card__img-wrap">
+            <span class="room-card__tag">Signature</span>
+            <img
+              src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=700&auto=format&fit=crop"
+              alt="Himalaya Suite"
+              loading="lazy"
+            />
+          </div>
+          <div class="room-card__body">
+            <div class="room-card__name">Himalaya Suite</div>
+            <p class="room-card__desc">
+              80 m² suite with panoramic floor-to-ceiling windows framing the entire
+              Annapurna range. Separate living room and walk-in wardrobe.
+            </p>
+            <div class="room-card__amenities">
+              <span class="amenity"><span class="amenity__icon">🛏️</span> Super King</span>
+              <span class="amenity"><span class="amenity__icon">🪟</span> Floor-to-Ceiling</span>
+              <span class="amenity"><span class="amenity__icon">🍾</span> Butler Service</span>
+              <span class="amenity"><span class="amenity__icon">🧖</span> In-Suite Spa</span>
+            </div>
+            <div class="room-card__footer">
+              <div>
+                <div class="room-card__price-label">From</div>
+                <div class="room-card__price">$520 <span>/ night</span></div>
+              </div>
+              <a href="#booking" class="btn btn--gold btn--sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room 3 -->
+        <div class="room-card">
+          <div class="room-card__img-wrap">
+            <span class="room-card__tag">Most Private</span>
+            <img
+              src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=700&auto=format&fit=crop"
+              alt="Private Garden Villa"
+              loading="lazy"
+            />
+          </div>
+          <div class="room-card__body">
+            <div class="room-card__name">Private Garden Villa</div>
+            <p class="room-card__desc">
+              160 m² standalone villa with a private plunge pool, walled garden, and
+              dedicated host. Ideal for honeymoons and extended retreats.
+            </p>
+            <div class="room-card__amenities">
+              <span class="amenity"><span class="amenity__icon">🏊</span> Plunge Pool</span>
+              <span class="amenity"><span class="amenity__icon">🌿</span> Walled Garden</span>
+              <span class="amenity"><span class="amenity__icon">🍳</span> Private Kitchen</span>
+              <span class="amenity"><span class="amenity__icon">🚗</span> Buggy Transfer</span>
+            </div>
+            <div class="room-card__footer">
+              <div>
+                <div class="room-card__price-label">From</div>
+                <div class="room-card__price">$980 <span>/ night</span></div>
+              </div>
+              <a href="#booking" class="btn btn--gold btn--sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END ROOMS -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 7: AMENITIES SECTION
+       Dark panel: icon grid on left, image on right.
+       ══════════════════════════════════════════════════════════ -->
+  <section class="amenities section-pad" id="amenities">
+    <div class="container">
+      <div class="amenities__grid">
+
+        <!-- Text + icon grid -->
+        <div class="amenities__text">
+          <p class="eyebrow">Resort Facilities</p>
+          <h2 class="display-title">Every Detail,<br><em>Considered</em></h2>
+          <div class="rule"></div>
+          <p class="body-lead">
+            From the Ayurvedic spa to the rooftop infinity pool, every facility at Aurum
+            is designed to dissolve the boundary between indulgence and wellbeing.
+          </p>
+
+          <div class="amenities__list">
+
+            <div class="amenity-item">
+              <div class="amenity-item__icon-box">♨️</div>
+              <div>
+                <div class="amenity-item__title">Himalayan Spa</div>
+                <div class="amenity-item__desc">12 treatment rooms, steam cave, cold plunge</div>
+              </div>
+            </div>
+
+            <div class="amenity-item">
+              <div class="amenity-item__icon-box">🏊</div>
+              <div>
+                <div class="amenity-item__title">Infinity Pool</div>
+                <div class="amenity-item__desc">Rooftop, heated, Annapurna panorama</div>
+              </div>
+            </div>
+
+            <div class="amenity-item">
+              <div class="amenity-item__icon-box">🍽️</div>
+              <div>
+                <div class="amenity-item__title">3 Restaurants</div>
+                <div class="amenity-item__desc">Nepalese, Japanese, and garden bistro</div>
+              </div>
+            </div>
+
+            <div class="amenity-item">
+              <div class="amenity-item__icon-box">🧘</div>
+              <div>
+                <div class="amenity-item__title">Yoga Pavilion</div>
+                <div class="amenity-item__desc">Daily classes, lakeside open platform</div>
+              </div>
+            </div>
+
+            <div class="amenity-item">
+              <div class="amenity-item__icon-box">🚵</div>
+              <div>
+                <div class="amenity-item__title">Adventure Desk</div>
+                <div class="amenity-item__desc">Trekking, paragliding, kayak tours</div>
+              </div>
+            </div>
+
+            <div class="amenity-item">
+              <div class="amenity-item__icon-box">📚</div>
+              <div>
+                <div class="amenity-item__title">Library &amp; Bar</div>
+                <div class="amenity-item__desc">3,000 volumes, curated wine cellar</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Image with floating stat -->
+        <div class="amenities__image">
+          <img
+            src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=700&auto=format&fit=crop"
+            alt="Infinity pool overlooking mountains"
+            loading="lazy"
+          />
+          <div class="amenities__stat">
+            <div class="amenities__stat-num">98%</div>
+            <div class="amenities__stat-text">Guest Satisfaction</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END AMENITIES -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 8: GALLERY SECTION
+       CSS-grid masonry layout; images open a lightbox on click.
+       ══════════════════════════════════════════════════════════ -->
+  <section class="gallery section-pad" id="gallery">
+    <div class="container">
+
+      <div class="gallery__header">
+        <p class="eyebrow">Visual Story</p>
+        <h2 class="display-title">Life at Aurum</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="gallery__grid">
+
+        <div class="gallery__item" data-lightbox="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&auto=format&fit=crop">
+          <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=700&auto=format&fit=crop" alt="Resort exterior" loading="lazy" />
+          <div class="gallery__item-overlay"><span class="gallery__zoom">⊕</span></div>
+        </div>
+
+        <div class="gallery__item" data-lightbox="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=1200&auto=format&fit=crop">
+          <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=400&auto=format&fit=crop" alt="Spa" loading="lazy" />
+          <div class="gallery__item-overlay"><span class="gallery__zoom">⊕</span></div>
+        </div>
+
+        <div class="gallery__item" data-lightbox="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&auto=format&fit=crop">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&auto=format&fit=crop" alt="Restaurant" loading="lazy" />
+          <div class="gallery__item-overlay"><span class="gallery__zoom">⊕</span></div>
+        </div>
+
+        <div class="gallery__item" data-lightbox="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&auto=format&fit=crop">
+          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=700&auto=format&fit=crop" alt="Pool" loading="lazy" />
+          <div class="gallery__item-overlay"><span class="gallery__zoom">⊕</span></div>
+        </div>
+
+        <div class="gallery__item" data-lightbox="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&auto=format&fit=crop">
+          <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&auto=format&fit=crop" alt="Deluxe Room" loading="lazy" />
+          <div class="gallery__item-overlay"><span class="gallery__zoom">⊕</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END GALLERY -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 9: TESTIMONIALS SECTION
+       ══════════════════════════════════════════════════════════ -->
+  <section class="testimonials section-pad" id="reviews">
+    <div class="container">
+
+      <div class="testimonials__header">
+        <p class="eyebrow">Guest Voices</p>
+        <h2 class="display-title">Moments That <em>Stay With You</em></h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="testimonials__grid">
+
+        <div class="testi-card">
+          <div class="testi-card__mark">"</div>
+          <div class="testi-card__stars">★★★★★</div>
+          <p class="testi-card__quote">
+            Waking up to the Annapurna range from a soaking tub is something I
+            will not recover from easily. Aurum has permanently ruined other hotels
+            for me.
+          </p>
+          <div class="testi-card__author">
+            <img class="testi-card__avatar" src="https://i.pravatar.cc/80?img=9" alt="Sophie W." loading="lazy" />
+            <div>
+              <div class="testi-card__name">Sophie W.</div>
+              <div class="testi-card__meta">London · Himalaya Suite · 7 nights</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-card__mark">"</div>
+          <div class="testi-card__stars">★★★★★</div>
+          <p class="testi-card__quote">
+            The garden villa for our honeymoon was flawless. Our host remembered
+            every preference we'd mentioned and our plunge pool had rose petals
+            waiting the first evening. Pure magic.
+          </p>
+          <div class="testi-card__author">
+            <img class="testi-card__avatar" src="https://i.pravatar.cc/80?img=27" alt="Kenji & Noa" loading="lazy" />
+            <div>
+              <div class="testi-card__name">Kenji &amp; Noa M.</div>
+              <div class="testi-card__meta">Tokyo · Garden Villa · 5 nights</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-card__mark">"</div>
+          <div class="testi-card__stars">★★★★★</div>
+          <p class="testi-card__quote">
+            I've covered luxury travel for fifteen years. Aurum is the rare place
+            that delivers a feeling that cannot be engineered — quiet, genuine, and
+            completely singular.
+          </p>
+          <div class="testi-card__author">
+            <img class="testi-card__avatar" src="https://i.pravatar.cc/80?img=52" alt="Elena R." loading="lazy" />
+            <div>
+              <div class="testi-card__name">Elena R.</div>
+              <div class="testi-card__meta">Condé Nast Traveller · 4-night stay</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END TESTIMONIALS -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 10: SPECIAL OFFERS SECTION
+       Three package cards with discounts.
+       ══════════════════════════════════════════════════════════ -->
+  <section class="offers" id="offers">
+    <div class="container">
+
+      <div class="offers__header">
+        <p class="eyebrow">Packages &amp; Deals</p>
+        <h2 class="display-title">Special Offers</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="offers__grid">
+
+        <!-- Offer 1 -->
+        <div class="offer-card">
+          <div class="offer-card__header">
+            <div class="offer-card__title">Romantic Escape</div>
+            <span class="offer-card__discount">SAVE 15%</span>
+          </div>
+          <div class="offer-card__body">
+            <p class="offer-card__desc">
+              Three nights in the Himalaya Suite with private candlelit dinner,
+              couples massage, and sunset lake cruise.
+            </p>
+            <ul class="offer-card__perks">
+              <li class="offer-card__perk">3 nights — Himalaya Suite</li>
+              <li class="offer-card__perk">Couples massage (90 min)</li>
+              <li class="offer-card__perk">Private sunset lake cruise</li>
+              <li class="offer-card__perk">Breakfast + dinner daily</li>
+            </ul>
+          </div>
+          <div class="offer-card__footer">
+            <div>
+              <div class="offer-card__from">From</div>
+              <div class="offer-card__price">$1,320 <span>/ package</span></div>
+            </div>
+            <a href="#booking" class="btn btn--gold btn--sm">Book Package</a>
+          </div>
+        </div>
+
+        <!-- Offer 2 -->
+        <div class="offer-card">
+          <div class="offer-card__header">
+            <div class="offer-card__title">Wellness Retreat</div>
+            <span class="offer-card__discount">SAVE 20%</span>
+          </div>
+          <div class="offer-card__body">
+            <p class="offer-card__desc">
+              Five nights of deep restoration: daily yoga, Ayurvedic treatments,
+              guided meditation, and a personalised detox menu.
+            </p>
+            <ul class="offer-card__perks">
+              <li class="offer-card__perk">5 nights — Deluxe Lake View</li>
+              <li class="offer-card__perk">Daily yoga & meditation</li>
+              <li class="offer-card__perk">3 Ayurvedic treatments</li>
+              <li class="offer-card__perk">Full-board detox dining</li>
+            </ul>
+          </div>
+          <div class="offer-card__footer">
+            <div>
+              <div class="offer-card__from">From</div>
+              <div class="offer-card__price">$2,100 <span>/ package</span></div>
+            </div>
+            <a href="#booking" class="btn btn--gold btn--sm">Book Package</a>
+          </div>
+        </div>
+
+        <!-- Offer 3 -->
+        <div class="offer-card">
+          <div class="offer-card__header">
+            <div class="offer-card__title">Adventure &amp; Comfort</div>
+            <span class="offer-card__discount">SAVE 10%</span>
+          </div>
+          <div class="offer-card__body">
+            <p class="offer-card__desc">
+              Four nights paired with guided trekking, paragliding over Phewa Lake,
+              and a private mountain-biking excursion.
+            </p>
+            <ul class="offer-card__perks">
+              <li class="offer-card__perk">4 nights — Deluxe Lake View</li>
+              <li class="offer-card__perk">Guided Annapurna day trek</li>
+              <li class="offer-card__perk">Tandem paragliding flight</li>
+              <li class="offer-card__perk">Mountain-bike excursion</li>
+            </ul>
+          </div>
+          <div class="offer-card__footer">
+            <div>
+              <div class="offer-card__from">From</div>
+              <div class="offer-card__price">$1,680 <span>/ package</span></div>
+            </div>
+            <a href="#booking" class="btn btn--gold btn--sm">Book Package</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END OFFERS -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 11: LOCATION SECTION
+       Static map image + contact details.
+       ══════════════════════════════════════════════════════════ -->
+  <section class="location section-pad" id="location">
+    <div class="container">
+
+      <div class="location__grid">
+
+        <!-- Left: static map -->
+        <div>
+          <p class="eyebrow">Find Us</p>
+          <h2 class="display-title">Getting to <em>Aurum</em></h2>
+          <div class="rule"></div>
+          <p class="body-lead">
+            Located 4 km from Pokhara Airport and 6 km from the city centre on
+            the quiet northeastern shore of Phewa Lake.
+          </p>
+
+          <div class="location__items">
+            <div class="location__item">
+              <div class="location__icon">📍</div>
+              <div>
+                <div class="location__item-label">Address</div>
+                <div class="location__item-value">Baidam, Lakeside North, Pokhara 33700, Nepal</div>
+              </div>
+            </div>
+            <div class="location__item">
+              <div class="location__icon">✈️</div>
+              <div>
+                <div class="location__item-label">From the Airport</div>
+                <div class="location__item-value">10 minutes by car — complimentary transfer for all guests</div>
+              </div>
+            </div>
+            <div class="location__item">
+              <div class="location__icon">📞</div>
+              <div>
+                <div class="location__item-label">Reservations</div>
+                <div class="location__item-value">+977 61 465 200 · reservations@aurum-resort.com</div>
+              </div>
+            </div>
+            <div class="location__item">
+              <div class="location__icon">🕐</div>
+              <div>
+                <div class="location__item-label">Reception</div>
+                <div class="location__item-value">Open 24 hours · Check-in 2 pm · Check-out 12 pm</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: map image -->
+        <div class="location__map">
+          <img
+            src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&auto=format&fit=crop"
+            alt="Aerial view of Phewa Lake, Pokhara"
+            loading="lazy"
+          />
+          <div class="location__pin">📍 Aurum Resort, Phewa Lake</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END LOCATION -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 12: CTA / NEWSLETTER BAND
+       Email signup with background image.
+       ══════════════════════════════════════════════════════════ -->
+  <section class="cta-band" id="newsletter">
+    <div class="container">
+      <div class="cta-band__inner">
+
+        <p class="eyebrow" style="color:var(--clr-gold);">Stay Informed</p>
+        <h2 class="cta-band__title">
+          Reserve Early,<br>Save <em>Beautifully</em>
+        </h2>
+        <p class="cta-band__desc">
+          Join our guest list for priority booking access, seasonal offers, and
+          curated travel notes from Pokhara.
+        </p>
+
+        <form id="ctaForm" novalidate>
+          <div class="cta-band__form">
+            <input
+              class="cta-band__input"
+              type="email"
+              id="ctaEmail"
+              placeholder="Your email address"
+              required
+            />
+            <button type="submit" class="btn btn--gold cta-band__submit">Subscribe</button>
+          </div>
+          <p class="cta-band__note">No spam. Unsubscribe at any time.</p>
+        </form>
+
+        <p class="cta-band__success" id="ctaSuccess">
+          ✦ Welcome to the Aurum circle. Expect something lovely in your inbox.
+        </p>
+
+      </div>
+    </div>
+  </section>
+  <!-- END CTA BAND -->
+{% endblock %}

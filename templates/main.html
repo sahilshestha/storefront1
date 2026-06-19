@@ -1,0 +1,105 @@
+{% load static %}
+<!--<!DOCTYPE html>-->
+<html lang="en">
+
+<!-- ============================================================
+     HEAD — metadata, fonts, and styles
+     ============================================================ -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Savor — A Modern Eatery</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+</head>
+
+
+<!-- ============================================================
+     BODY — all visible page content
+     ============================================================ -->
+<body>
+
+{% block content %}
+
+{% endblock %}
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 7: FOOTER
+       Four-column layout with links and social icons.
+       ══════════════════════════════════════════════════════════ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+
+      <div class="footer__inner">
+
+        <!-- Brand column -->
+        <div>
+          <div class="footer__brand-name">Savor</div>
+          <p class="footer__tagline">
+            A modern eatery where local ingredients meet global inspiration — one honest
+            dish at a time.
+          </p>
+        </div>
+
+        <!-- Quick links -->
+        <div>
+          <div class="footer__col-title">Quick Links</div>
+          <ul class="footer__links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#foods">Menu</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Menu highlights -->
+        <div>
+          <div class="footer__col-title">Menu Highlights</div>
+          <ul class="footer__links">
+            <li><a href="#foods">Starters</a></li>
+            <li><a href="#foods">Main Course</a></li>
+            <li><a href="#foods">Desserts</a></li>
+            <li><a href="#foods">Drinks</a></li>
+          </ul>
+        </div>
+
+        <!-- Opening hours -->
+        <div>
+          <div class="footer__col-title">Hours</div>
+          <ul class="footer__links">
+            <li><a href="#">Mon – Fri: 11am – 10pm</a></li>
+            <li><a href="#">Sat – Sun: 10am – 11pm</a></li>
+            <li style="margin-top: 0.5rem;"><a href="#contact">Book a Table →</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2024 Savor Eatery. Made with ♥ in Kathmandu.</p>
+        <div class="footer__socials">
+          <a class="social-link" href="#" aria-label="Facebook">f</a>
+          <a class="social-link" href="#" aria-label="Instagram">ig</a>
+          <a class="social-link" href="#" aria-label="Twitter">tw</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <!-- END FOOTER -->
+
+
+  <!-- ============================================================
+       BLOCK JS
+       All interactivity in one place, each piece labelled.
+       ============================================================ -->
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

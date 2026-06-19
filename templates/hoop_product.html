@@ -1,0 +1,217 @@
+{% load static %}
+
+<!-- ══════════════════════════════════════════════════════════
+     FEATURED PRODUCTS SECTION
+══════════════════════════════════════════════════════════ -->
+
+<section class="products section-pad" id="products">
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="products__header">
+      <div>
+        <p class="section-label">Featured Drops</p>
+        <h2 class="section-title">Top Sellers</h2>
+      </div>
+
+      <a href="#" class="btn btn--outline btn--sm">
+        View All →
+      </a>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="products__filters">
+      <button class="filter-chip active" data-filter="all">All</button>
+      <button class="filter-chip" data-filter="shoes">Shoes</button>
+      <button class="filter-chip" data-filter="jerseys">Jerseys</button>
+      <button class="filter-chip" data-filter="training">Training</button>
+      <button class="filter-chip" data-filter="accessories">Accessories</button>
+    </div>
+
+    <!-- GRID -->
+    <div class="products__grid">
+
+      <!-- PRODUCT 1 -->
+      <div class="prod-card" data-category="shoes">
+        <span class="prod-card__badge prod-card__badge--new">New</span>
+
+        <button class="prod-card__wish" aria-label="Wishlist">♡</button>
+
+        <div class="prod-card__image-wrap">
+          <img class="prod-card__image"
+               src="https://i.pinimg.com/1200x/66/2f/8c/662f8c7a9f2fe77b181c9047438164fc.jpg"
+               alt="HW Pro IV Court Shoe">
+        </div>
+
+        <div class="prod-card__body">
+          <div class="prod-card__category">Shoes</div>
+          <div class="prod-card__name">HW Pro IV Court Shoe</div>
+
+          <div class="prod-card__stars">★★★★★ <span>(214)</span></div>
+
+          <div class="prod-card__prices">
+            <span class="prod-card__price">$189</span>
+          </div>
+
+          <button class="btn btn--sm btn--full add-to-cart"
+                  data-name="HW Pro IV Court Shoe"
+                  data-price="189">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 2 -->
+      <div class="prod-card" data-category="jerseys">
+        <span class="prod-card__badge prod-card__badge--collab">Collab</span>
+
+        <button class="prod-card__wish">♡</button>
+
+        <div class="prod-card__image-wrap">
+          <img class="prod-card__image"
+               src="https://i.pinimg.com/736x/fc/90/ec/fc90ec28e09479625e61949a07515f72.jpg"
+               alt="City Jersey">
+        </div>
+
+        <div class="prod-card__body">
+          <div class="prod-card__category">Jerseys</div>
+          <div class="prod-card__name">City Edition Jersey '25</div>
+
+          <div class="prod-card__stars">★★★★☆ <span>(87)</span></div>
+
+          <div class="prod-card__prices">
+            <span class="prod-card__price">$95</span>
+            <span class="prod-card__was">$120</span>
+          </div>
+
+          <button class="btn btn--sm btn--full add-to-cart"
+                  data-name="City Edition Jersey '25"
+                  data-price="95">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 3 -->
+      <div class="prod-card" data-category="training">
+        <span class="prod-card__badge prod-card__badge--hot">Hot</span>
+
+        <button class="prod-card__wish">♡</button>
+
+        <div class="prod-card__image-wrap">
+          <img class="prod-card__image"
+               src="https://i.pinimg.com/1200x/eb/15/ee/eb15ee66eecfcbc7a4db083db308f36c.jpg"
+               alt="Game Ball">
+        </div>
+
+        <div class="prod-card__body">
+          <div class="prod-card__category">Training</div>
+          <div class="prod-card__name">Elite Game Ball – Size 7</div>
+
+          <div class="prod-card__stars">★★★★★ <span>(341)</span></div>
+
+          <div class="prod-card__prices">
+            <span class="prod-card__price">$65</span>
+          </div>
+
+          <button class="btn btn--sm btn--full add-to-cart"
+                  data-name="Elite Game Ball – Size 7"
+                  data-price="65">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 4 -->
+      <div class="prod-card" data-category="shoes">
+        <span class="prod-card__badge prod-card__badge--sale">Sale</span>
+
+        <button class="prod-card__wish">♡</button>
+
+        <div class="prod-card__image-wrap">
+          <img class="prod-card__image"
+               src="https://i.pinimg.com/1200x/d0/8b/61/d08b612b0c69b4d752791509dac679fb.jpg"
+               alt="Trainer Shoe">
+        </div>
+
+        <div class="prod-card__body">
+          <div class="prod-card__category">Shoes</div>
+          <div class="prod-card__name">Crossover Low Trainer</div>
+
+          <div class="prod-card__stars">★★★★☆ <span>(162)</span></div>
+
+          <div class="prod-card__prices">
+            <span class="prod-card__price">$129</span>
+            <span class="prod-card__was">$165</span>
+          </div>
+
+          <button class="btn btn--sm btn--full add-to-cart"
+                  data-name="Crossover Low Trainer"
+                  data-price="129">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 5 -->
+      <div class="prod-card" data-category="accessories">
+        <button class="prod-card__wish">♡</button>
+
+        <div class="prod-card__image-wrap">
+          <img class="prod-card__image"
+               src="https://images.unsplash.com/photo-1519861531473-9200262188bf?w=600&auto=format&fit=crop"
+               alt="Socks">
+        </div>
+
+        <div class="prod-card__body">
+          <div class="prod-card__category">Accessories</div>
+          <div class="prod-card__name">Court Grip Crew Socks</div>
+
+          <div class="prod-card__stars">★★★★★ <span>(98)</span></div>
+
+          <div class="prod-card__prices">
+            <span class="prod-card__price">$22</span>
+          </div>
+
+          <button class="btn btn--sm btn--full add-to-cart"
+                  data-name="Court Grip Crew Socks"
+                  data-price="22">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 6 -->
+      <div class="prod-card" data-category="training">
+        <span class="prod-card__badge prod-card__badge--new">New</span>
+
+        <button class="prod-card__wish">♡</button>
+
+        <div class="prod-card__image-wrap">
+          <img class="prod-card__image"
+               src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=600&auto=format&fit=crop"
+               alt="Bands">
+        </div>
+
+        <div class="prod-card__body">
+          <div class="prod-card__category">Training</div>
+          <div class="prod-card__name">Agility Pro Band Set</div>
+
+          <div class="prod-card__stars">★★★★★ <span>(54)</span></div>
+
+          <div class="prod-card__prices">
+            <span class="prod-card__price">$48</span>
+          </div>
+
+          <button class="btn btn--sm btn--full add-to-cart"
+                  data-name="Agility Pro Band Set"
+                  data-price="48">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+

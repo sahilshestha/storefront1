@@ -1,0 +1,160 @@
+{% load static %}
+<!--<!DOCTYPE html>-->
+<html lang="en">
+
+<!-- ============================================================
+     HEAD — metadata, fonts, and styles
+     ============================================================ -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luminary — Modern Home Goods</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'css/shop.css' %}" />
+
+</head>
+
+{% block content %}
+
+{% endblock %}
+
+
+
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 10: FOOTER
+       ══════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer__top">
+
+        <div>
+          <div class="footer__logo">Luminary</div>
+          <p class="footer__about">
+            Modern home goods designed for how people actually live — sustainably made,
+            carefully crafted, honestly priced.
+          </p>
+          <div class="footer__socials">
+            <a class="footer__social-link" href="#" aria-label="Instagram">ig</a>
+            <a class="footer__social-link" href="#" aria-label="Pinterest">pt</a>
+            <a class="footer__social-link" href="#" aria-label="Facebook">fb</a>
+            <a class="footer__social-link" href="#" aria-label="TikTok">tk</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Shop</div>
+          <ul class="footer__links">
+            <li><a href="#products">New Arrivals</a></li>
+            <li><a href="#categories">Living Room</a></li>
+            <li><a href="#categories">Bedroom</a></li>
+            <li><a href="#categories">Kitchen</a></li>
+            <li><a href="#banner">Sale</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Help</div>
+          <ul class="footer__links">
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Track Your Order</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Company</div>
+          <ul class="footer__links">
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Affiliates</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2025 Luminary Home Goods. All rights reserved.</p>
+        <div class="footer__payments">
+          <span class="payment-chip">VISA</span>
+          <span class="payment-chip">MC</span>
+          <span class="payment-chip">AMEX</span>
+          <span class="payment-chip">PayPal</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <!-- END FOOTER -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 11: CART DRAWER
+       Slide-in panel from the right side.
+       Not a separate "page" — it lives in the same HTML file.
+       ══════════════════════════════════════════════════════════ -->
+
+  <!-- Dark overlay behind the drawer -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <!-- The drawer panel itself -->
+  <div class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+
+    <div class="cart-drawer__header">
+      <h2 class="cart-drawer__title">Your Cart</h2>
+      <button class="cart-drawer__close" id="cartClose" aria-label="Close cart">✕</button>
+    </div>
+
+    <!-- Item list — JS populates this -->
+    <div class="cart-drawer__items" id="cartItems">
+      <!-- Empty state (shown when cart has no items) -->
+      <div class="cart-empty">
+        <div class="cart-empty__icon">🛒</div>
+        <p>Your cart is empty.</p>
+        <p style="font-size:0.85rem; color:var(--clr-muted); margin-top:4px;">
+          Add something beautiful!
+        </p>
+      </div>
+    </div>
+
+    <!-- Totals + checkout -->
+    <div class="cart-drawer__footer" id="cartFooter" style="display:none;">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">$0</span>
+      </div>
+      <div class="cart-subtotal">
+        <span>Shipping</span>
+        <span style="color:var(--clr-accent);">Free</span>
+      </div>
+      <div class="cart-subtotal cart-subtotal--total">
+        <span>Total</span>
+        <span id="cartTotal">$0</span>
+      </div>
+      <div class="cart-drawer__checkout">
+        <button class="btn btn--accent btn--full">Proceed to Checkout</button>
+        <span class="cart-drawer__continue" id="continueShopping">← Continue Shopping</span>
+      </div>
+    </div>
+
+  </div>
+  <!-- END CART DRAWER -->
+
+
+  <!-- ============================================================
+       BLOCK JS
+       ============================================================ -->
+<script src="{% static 'js/shop.js' %}"></script>
+
+</body>
+</html>

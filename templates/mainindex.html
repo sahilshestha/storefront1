@@ -1,0 +1,495 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="hero section-pad" id="hero">
+    <div class="container">
+      <div class="hero__content">
+
+        <span class="hero__tag">Est. 2018 · Kathmandu</span>
+
+        <h1 class="hero__title">
+          Where Every <em>Bite</em><br>Tells a Story
+        </h1>
+
+        <p class="hero__desc">
+          Handcrafted dishes from local farms, served in an atmosphere that feels like home.
+          Come hungry. Leave inspired.
+        </p>
+
+        <div class="hero__cta">
+          <a href="#foods" class="btn">Explore Menu</a>
+          <a href="#contact" class="btn btn--outline">Reserve a Table</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scroll nudge at the bottom of the hero -->
+    <div class="hero__scroll" aria-hidden="true">Scroll</div>
+
+  </section>
+  <!-- END HERO -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 3: ABOUT US SECTION
+       Two-column layout: image on left, text on right.
+       ══════════════════════════════════════════════════════════ -->
+  <section class="about section-pad" id="about">
+    <div class="container">
+      <div class="about__grid">
+
+        <!-- Left: decorative image -->
+        <div class="about__image-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&auto=format&fit=crop"
+            alt="Chef preparing food in the kitchen"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Right: text content -->
+        <div class="about__text">
+          <p class="section-label">Our Story</p>
+          <h2 class="section-title">Passion on a Plate, Every Single Day</h2>
+          <div class="divider"></div>
+          <p class="section-subtitle">
+            Savor was born from a simple belief: great food begins with honest ingredients
+            and a chef who genuinely cares. We source directly from local farmers and craft
+            every dish from scratch.
+          </p>
+          <p style="color: var(--clr-muted); font-size: 0.95rem; margin-bottom: 2rem;">
+            Our open kitchen lets you watch the magic happen — nothing is hidden, nothing
+            is rushed. From the first sauté to the final garnish, every plate is an act
+            of love for the craft and for our guests.
+          </p>
+          <a href="#contact" class="btn">Book a Table</a>
+
+          <!-- Quick stats row -->
+          <div class="about__stats">
+            <div>
+              <div class="stat__number">12+</div>
+              <div class="stat__label">Years of experience</div>
+            </div>
+            <div>
+              <div class="stat__number">48</div>
+              <div class="stat__label">Signature dishes</div>
+            </div>
+            <div>
+              <div class="stat__number">3K+</div>
+              <div class="stat__label">Happy guests / month</div>
+            </div>
+            <div>
+              <div class="stat__number">100%</div>
+              <div class="stat__label">Locally sourced</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END ABOUT -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 4: FOODS / MENU SECTION
+       Filterable card grid of menu items.
+       ══════════════════════════════════════════════════════════ -->
+  <section class="foods section-pad" id="foods">
+    <div class="container">
+
+      <!-- Centred heading -->
+      <div class="foods__header">
+        <p class="section-label">Our Menu</p>
+        <h2 class="section-title">Crafted With Love &amp; Local Ingredients</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">
+          Seasonal menus that change as the harvests do — because the best ingredient
+          is always the freshest one.
+        </p>
+      </div>
+
+      <!-- Filter buttons — JS handles the active state -->
+      <div class="foods__filters" role="group" aria-label="Filter menu by category">
+        <button class="filter-btn active" data-filter="all">All Items</button>
+        <button class="filter-btn" data-filter="starter">Starters</button>
+        <button class="filter-btn" data-filter="main">Main Course</button>
+        <button class="filter-btn" data-filter="dessert">Desserts</button>
+        <button class="filter-btn" data-filter="drink">Drinks</button>
+      </div>
+
+      <!-- Menu card grid -->
+      <div class="foods__grid" id="foodsGrid">
+
+        <!-- Card 1 -->
+        <article class="food-card" data-category="starter">
+          <img
+            class="food-card__image"
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&auto=format&fit=crop"
+            alt="Bruschetta with tomatoes"
+            loading="lazy"
+          />
+          <div class="food-card__body">
+            <span class="food-card__tag">Starter</span>
+            <h3 class="food-card__name">Garden Bruschetta</h3>
+            <p class="food-card__desc">Toasted sourdough with heirloom tomatoes, fresh basil, and aged balsamic glaze.</p>
+          </div>
+          <div class="food-card__footer">
+            <span class="food-card__price">$8.50</span>
+            <button class="btn food-card__order">Order</button>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="food-card" data-category="main">
+          <img
+            class="food-card__image"
+            src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop"
+            alt="Grilled salmon"
+            loading="lazy"
+          />
+          <div class="food-card__body">
+            <span class="food-card__tag">Main Course</span>
+            <h3 class="food-card__name">Herb-Crusted Salmon</h3>
+            <p class="food-card__desc">Pan-seared Atlantic salmon with lemon-caper butter, wilted spinach, and new potatoes.</p>
+          </div>
+          <div class="food-card__footer">
+            <span class="food-card__price">$24.00</span>
+            <button class="btn food-card__order">Order</button>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="food-card" data-category="main">
+          <img
+            class="food-card__image"
+            src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&auto=format&fit=crop"
+            alt="Vegetarian grain bowl"
+            loading="lazy"
+          />
+          <div class="food-card__body">
+            <span class="food-card__tag">Main Course</span>
+            <h3 class="food-card__name">Harvest Grain Bowl</h3>
+            <p class="food-card__desc">Farro, roasted root vegetables, pickled onion, tahini dressing, and toasted seeds.</p>
+          </div>
+          <div class="food-card__footer">
+            <span class="food-card__price">$18.00</span>
+            <button class="btn food-card__order">Order</button>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="food-card" data-category="dessert">
+          <img
+            class="food-card__image"
+            src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&auto=format&fit=crop"
+            alt="Chocolate lava cake"
+            loading="lazy"
+          />
+          <div class="food-card__body">
+            <span class="food-card__tag">Dessert</span>
+            <h3 class="food-card__name">Dark Chocolate Fondant</h3>
+            <p class="food-card__desc">Warm chocolate lava cake with vanilla bean gelato and salted caramel drizzle.</p>
+          </div>
+          <div class="food-card__footer">
+            <span class="food-card__price">$11.00</span>
+            <button class="btn food-card__order">Order</button>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="food-card" data-category="starter">
+          <img
+            class="food-card__image"
+            src="https://images.unsplash.com/photo-1541014741259-de529411b96a?w=600&auto=format&fit=crop"
+            alt="Soup"
+            loading="lazy"
+          />
+          <div class="food-card__body">
+            <span class="food-card__tag">Starter</span>
+            <h3 class="food-card__name">Roasted Tomato Bisque</h3>
+            <p class="food-card__desc">Slow-roasted tomatoes blended with cream, fresh thyme, and crispy sourdough croutons.</p>
+          </div>
+          <div class="food-card__footer">
+            <span class="food-card__price">$9.00</span>
+            <button class="btn food-card__order">Order</button>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="food-card" data-category="drink">
+          <img
+            class="food-card__image"
+            src="https://images.unsplash.com/photo-1561047029-3000c68339ca?w=600&auto=format&fit=crop"
+            alt="Cocktail"
+            loading="lazy"
+          />
+          <div class="food-card__body">
+            <span class="food-card__tag">Drink</span>
+            <h3 class="food-card__name">Elderflower Spritz</h3>
+            <p class="food-card__desc">Elderflower cordial, fresh cucumber, mint, and sparkling water over ice.</p>
+          </div>
+          <div class="food-card__footer">
+            <span class="food-card__price">$7.00</span>
+            <button class="btn food-card__order">Order</button>
+          </div>
+        </article>
+
+      </div>
+      <!-- END foods__grid -->
+
+    </div>
+  </section>
+  <!-- END FOODS -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 5: TESTIMONIALS / FEEDBACK SECTION
+       Customer reviews displayed as cards.
+       ══════════════════════════════════════════════════════════ -->
+  <section class="testimonials section-pad" id="testimonials">
+    <div class="container">
+
+      <p class="section-label">Guest Reviews</p>
+      <h2 class="section-title">What Our Guests Are Saying</h2>
+      <div class="divider"></div>
+
+      <div class="testimonials__track">
+
+        <!-- Review 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars" aria-label="5 stars">★★★★★</div>
+          <p class="testimonial-card__quote">
+            The salmon was cooked to absolute perfection — crispy skin, silky inside.
+            The staff remembered my dietary preference without me having to repeat it. Remarkable.
+          </p>
+          <div class="testimonial-card__author">
+            <img
+              class="testimonial-card__avatar"
+              src="https://i.pravatar.cc/80?img=12"
+              alt="Portrait of Aria M."
+              loading="lazy"
+            />
+            <div>
+              <div class="testimonial-card__name">Aria M.</div>
+              <div class="testimonial-card__role">Food Blogger · Kathmandu</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars" aria-label="5 stars">★★★★★</div>
+          <p class="testimonial-card__quote">
+            Brought my team here for a working lunch and everyone left raving. The grain bowl
+            is going to keep me coming back every week. Best vegetarian option in the city.
+          </p>
+          <div class="testimonial-card__author">
+            <img
+              class="testimonial-card__avatar"
+              src="https://i.pravatar.cc/80?img=33"
+              alt="Portrait of Dev K."
+              loading="lazy"
+            />
+            <div>
+              <div class="testimonial-card__name">Dev K.</div>
+              <div class="testimonial-card__role">Product Manager · Pokhara</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars" aria-label="4 stars">★★★★☆</div>
+          <p class="testimonial-card__quote">
+            Ambience is beautiful and the chocolate fondant is pure magic. Had to wait
+            a bit longer than expected on a Friday night, but completely worth it once
+            the food arrived.
+          </p>
+          <div class="testimonial-card__author">
+            <img
+              class="testimonial-card__avatar"
+              src="https://i.pravatar.cc/80?img=47"
+              alt="Portrait of Lena T."
+              loading="lazy"
+            />
+            <div>
+              <div class="testimonial-card__name">Lena T.</div>
+              <div class="testimonial-card__role">Architect · Lalitpur</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- END testimonials__track -->
+
+    </div>
+  </section>
+  <!-- END TESTIMONIALS -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 6: CONTACT US SECTION
+       Two columns: info on left, form on right.
+       ══════════════════════════════════════════════════════════ -->
+  <section class="contact section-pad" id="contact">
+    <div class="container">
+
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Reserve Your Table</h2>
+      <div class="divider"></div>
+
+      <div class="contact__grid">
+
+        <!-- Left: contact info -->
+        <div class="contact__info">
+
+          <div class="contact__info-item">
+            <span class="contact__icon">📍</span>
+            <div>
+              <div class="contact__info-label">Address</div>
+              <div class="contact__info-value">42 Durbar Marg, Kathmandu 44600, Nepal</div>
+            </div>
+          </div>
+
+          <div class="contact__info-item">
+            <span class="contact__icon">📞</span>
+            <div>
+              <div class="contact__info-label">Phone</div>
+              <div class="contact__info-value">+977 1 4412345</div>
+            </div>
+          </div>
+
+          <div class="contact__info-item">
+            <span class="contact__icon">✉️</span>
+            <div>
+              <div class="contact__info-label">Email</div>
+              <div class="contact__info-value">hello@savoreatery.com</div>
+            </div>
+          </div>
+
+          <div class="contact__info-item">
+            <span class="contact__icon">🕐</span>
+            <div>
+              <div class="contact__info-label">Opening Hours</div>
+              <div class="contact__info-value">
+                Mon – Fri: 11:00 am – 10:00 pm<br>
+                Sat – Sun: 10:00 am – 11:00 pm
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: reservation form -->
+        <div class="contact__form-wrap">
+
+          <!-- Success banner — hidden until form is submitted -->
+          <div class="form__success" id="formSuccess" role="alert">
+            ✓ Your reservation request has been sent! We'll confirm by email within 2 hours.
+          </div>
+
+          <form class="form" id="contactForm" novalidate>
+
+            <!-- Row 1: name and email side by side -->
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label" for="name">Full Name</label>
+                <input
+                  class="form__input"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Jane Smith"
+                  required
+                />
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="email">Email Address</label>
+                <input
+                  class="form__input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="jane@example.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Row 2: phone and guests -->
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label" for="phone">Phone Number</label>
+                <input
+                  class="form__input"
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="+977 98XXXXXXXX"
+                />
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="guests">Number of Guests</label>
+                <select class="form__select" id="guests" name="guests" required>
+                  <option value="">Select guests</option>
+                  <option value="1">1 person</option>
+                  <option value="2">2 people</option>
+                  <option value="3-4">3 – 4 people</option>
+                  <option value="5-8">5 – 8 people</option>
+                  <option value="9+">9 + people</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Row 3: date and time -->
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label" for="date">Preferred Date</label>
+                <input
+                  class="form__input"
+                  type="date"
+                  id="date"
+                  name="date"
+                  required
+                />
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="time">Preferred Time</label>
+                <input
+                  class="form__input"
+                  type="time"
+                  id="time"
+                  name="time"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Row 4: special requests -->
+            <div class="form__group">
+              <label class="form__label" for="message">Special Requests</label>
+              <textarea
+                class="form__textarea"
+                id="message"
+                name="message"
+                placeholder="Allergies, dietary needs, special occasion…"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn" style="width: 100%; justify-content: center;">
+              Send Reservation Request
+            </button>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

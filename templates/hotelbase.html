@@ -1,0 +1,159 @@
+{% load static %}
+<!--<!DOCTYPE html>-->
+<html lang="en">
+
+<!-- ============================================================
+     HEAD — metadata, fonts, and styles
+     ============================================================ -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurum Resort & Spa — Luxury Redefined</title>
+
+  <!-- Google Fonts: Cormorant Garamond (display) + Jost (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'css/hotel.css' %}" />
+
+</head>
+
+
+<!-- ============================================================
+     BODY
+     ============================================================ -->
+<body>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 1: HEADER
+       Fixed, transparent at top — goes dark on scroll.
+       ══════════════════════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+
+      <!-- Logo -->
+      <a href="#" class="header__logo">
+        <span class="header__logo-name">Aurum</span>
+        <span class="header__logo-sub">Resort &amp; Spa · Pokhara</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav aria-label="Main navigation">
+        <ul class="nav__list" id="navList">
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#rooms">Rooms</a></li>
+          <li><a class="nav__link" href="#amenities">Amenities</a></li>
+          <li><a class="nav__link" href="#gallery">Gallery</a></li>
+          <li><a class="nav__link" href="#offers">Offers</a></li>
+          <li><a class="nav__link" href="#location">Location</a></li>
+        </ul>
+      </nav>
+
+      <!-- Reserve CTA + hamburger -->
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <a href="#booking" class="btn btn--gold btn--sm" style="white-space:nowrap;">Reserve Now</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+  <!-- END HEADER -->
+
+
+
+  {% block content %}
+
+{% endblock %}
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 13: FOOTER
+       ══════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer__top">
+
+        <div>
+          <div class="footer__logo-name">Aurum</div>
+          <div class="footer__logo-tag">Resort &amp; Spa · Pokhara, Nepal</div>
+          <p class="footer__about">
+            A luxury lakeside retreat on the shore of Phewa Lake — where the Himalaya
+            meets considered hospitality.
+          </p>
+          <div class="footer__socials">
+            <a class="footer__social" href="#" aria-label="Instagram">ig</a>
+            <a class="footer__social" href="#" aria-label="Facebook">fb</a>
+            <a class="footer__social" href="#" aria-label="TripAdvisor">ta</a>
+            <a class="footer__social" href="#" aria-label="YouTube">yt</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Stay</div>
+          <ul class="footer__links">
+            <li><a href="#rooms">Deluxe Lake View</a></li>
+            <li><a href="#rooms">Himalaya Suite</a></li>
+            <li><a href="#rooms">Garden Villa</a></li>
+            <li><a href="#offers">Special Offers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Experience</div>
+          <ul class="footer__links">
+            <li><a href="#amenities">Spa &amp; Wellness</a></li>
+            <li><a href="#amenities">Dining</a></li>
+            <li><a href="#amenities">Adventure</a></li>
+            <li><a href="#amenities">Yoga &amp; Meditation</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Information</div>
+          <ul class="footer__links">
+            <li><a href="#location">Getting Here</a></li>
+            <li><a href="#">Cancellation Policy</a></li>
+            <li><a href="#">Weddings &amp; Events</a></li>
+            <li><a href="#">Press &amp; Media</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2025 Aurum Resort &amp; Spa. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="#">Cookie Settings</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <!-- END FOOTER -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 14: LIGHTBOX MODAL
+       Opens when gallery images are clicked.
+       ══════════════════════════════════════════════════════════ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close image">✕</button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="Gallery image" />
+  </div>
+  <!-- END LIGHTBOX -->
+
+
+  <!-- ============================================================
+       BLOCK JS — all interactivity, clearly labelled
+       ============================================================ -->
+<script src="{% static 'js/hotel.js' %}"></script>
+
+</body>
+</html>

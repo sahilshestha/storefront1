@@ -1,0 +1,290 @@
+{% load static %}
+
+<html lang="en">
+
+<!-- ============================================================
+     HEAD — metadata, fonts, and styles
+     ============================================================ -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HARDWOOD — Basketball Gear & Apparel</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+
+
+    <link rel="stylesheet" href="{% static 'css/hoop.css' %}">
+
+
+</head>
+
+
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 1: ANNOUNCEMENT BAR
+       ══════════════════════════════════════════════════════════ -->
+  <div class="announcement" id="announcement">
+    🏀 &nbsp; New Season Drop — Use code <strong>HARDWOOD15</strong> for 15% off your first order &nbsp;·&nbsp; Free shipping on orders over $80
+    <button class="announcement__close" id="announcementClose" aria-label="Close announcement">✕</button>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 2: HEADER
+       ══════════════════════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header__inner">
+
+        <a href="#" class="header__logo">HARD<span>WOOD</span></a>
+
+        <div class="header__search">
+          <span class="header__search-icon">🔍</span>
+          <input type="search" placeholder="Search shoes, jerseys, gear…" aria-label="Search" />
+        </div>
+
+        <div class="header__icons">
+          <button class="icon-btn" aria-label="Wishlist">♡</button>
+          <button class="icon-btn" aria-label="My account">👤</button>
+          <button class="icon-btn" id="cartToggle" aria-label="Shopping cart">
+            🛒
+            <span class="icon-btn__badge" id="cartBadge">0</span>
+          </button>
+          <button class="nav__toggle" id="navToggle" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+
+      </div>
+
+      <nav class="subnav" aria-label="Category navigation">
+        <ul class="subnav__list">
+          <li><a class="subnav__link active" href="#products">All Gear</a></li>
+          <li><a class="subnav__link" href="#categories">Shoes</a></li>
+          <li><a class="subnav__link" href="#categories">Jerseys</a></li>
+          <li><a class="subnav__link" href="#categories">Training</a></li>
+          <li><a class="subnav__link" href="#categories">Accessories</a></li>
+          <li><a class="subnav__link" href="#banner">Sale 🔥</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+    {% block content %}
+    {% endblock %}
+
+
+
+
+
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 8: TESTIMONIALS SECTION
+       ══════════════════════════════════════════════════════════ -->
+  <section class="testimonials section-pad" id="testimonials">
+    <div class="container">
+      <div class="testimonials__header">
+        <p class="section-label">Real Ballers</p>
+        <h2 class="section-title">Player Reviews</h2>
+      </div>
+
+      <div class="testimonials__grid">
+
+        <div class="testi-card">
+          <div class="testi-card__stars">★★★★★</div>
+          <p class="testi-card__quote">
+            These shoes have completely changed my game. The ankle support during cuts is unreal — I stopped rolling my ankle after switching to HW Pro IV.
+          </p>
+          <div class="testi-card__product">HW Pro IV Court Shoe</div>
+          <div class="testi-card__author">
+            <div class="testi-card__avatar">🏀</div>
+            <div>
+              <div class="testi-card__name">Marcus T.</div>
+              <div class="testi-card__location">Chicago, IL</div>
+              <div class="testi-card__verified">✔ Verified Purchase</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-card__stars">★★★★★</div>
+          <p class="testi-card__quote">
+            The City Edition jersey fits perfectly — not too baggy, not too tight. Quality stitching and the fabric breathes really well during full-court games.
+          </p>
+          <div class="testi-card__product">City Edition Jersey '25</div>
+          <div class="testi-card__author">
+            <div class="testi-card__avatar">🏆</div>
+            <div>
+              <div class="testi-card__name">Dre Williams</div>
+              <div class="testi-card__location">Atlanta, GA</div>
+              <div class="testi-card__verified">✔ Verified Purchase</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-card__stars">★★★★☆</div>
+          <p class="testi-card__quote">
+            Best game ball I've used for outdoor courts. Grip stays consistent even after weeks of use on asphalt. Holds pressure perfectly. Would buy again.
+          </p>
+          <div class="testi-card__product">Elite Game Ball – Size 7</div>
+          <div class="testi-card__author">
+            <div class="testi-card__avatar">⛹️</div>
+            <div>
+              <div class="testi-card__name">Kevin R.</div>
+              <div class="testi-card__location">Houston, TX</div>
+              <div class="testi-card__verified">✔ Verified Purchase</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 9: NEWSLETTER SECTION
+       ══════════════════════════════════════════════════════════ -->
+  <section class="newsletter" id="newsletter">
+    <div class="newsletter__inner">
+      <h2 class="newsletter__title">Stay in the Game</h2>
+      <p class="newsletter__desc">Get early access to new drops, exclusive deals, and training tips delivered to your inbox.</p>
+
+      <form class="newsletter__form" id="newsletterForm" novalidate>
+        <input
+          class="newsletter__input"
+          type="email"
+          id="newsletterEmail"
+          placeholder="Enter your email…"
+          aria-label="Email address"
+        />
+        <button type="submit" class="newsletter__btn">Subscribe</button>
+      </form>
+
+      <div class="newsletter__success" id="newsletterSuccess">
+        🏀 You're in! Get ready for next-level drops.
+      </div>
+
+      <div class="newsletter__perks">
+        <span class="newsletter__perk">✔ Exclusive drops</span>
+        <span class="newsletter__perk">✔ Members-only deals</span>
+        <span class="newsletter__perk">✔ No spam, ever</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 10: FOOTER
+       ══════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+
+        <div>
+          <div class="footer__logo">HARD<span>WOOD</span></div>
+          <p class="footer__about">
+            Pro-grade basketball gear for players at every level. Built for the court, designed for the culture. Since 2018.
+          </p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social-link" aria-label="Instagram">IG</a>
+            <a href="#" class="footer__social-link" aria-label="Twitter/X">𝕏</a>
+            <a href="#" class="footer__social-link" aria-label="TikTok">TT</a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">YT</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Shop</div>
+          <ul class="footer__links">
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Jerseys</a></li>
+            <li><a href="#">Training Gear</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Sale</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Support</div>
+          <ul class="footer__links">
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">Order Tracking</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Company</div>
+          <ul class="footer__links">
+            <li><a href="#">About Hardwood</a></li>
+            <li><a href="#">Our Athletes</a></li>
+            <li><a href="#">Wholesale</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <span class="footer__copy">© 2025 Hardwood. All rights reserved.</span>
+        <div class="footer__payments">
+          <span class="payment-chip">VISA</span>
+          <span class="payment-chip">MC</span>
+          <span class="payment-chip">AMEX</span>
+          <span class="payment-chip">PAYPAL</span>
+          <span class="payment-chip">APPLE PAY</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       CART DRAWER
+       ══════════════════════════════════════════════════════════ -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer__header">
+      <span class="cart-drawer__title">Your Bag</span>
+      <button class="cart-drawer__close" id="cartClose" aria-label="Close cart">✕</button>
+    </div>
+
+    <div class="cart-drawer__items" id="cartItems"></div>
+
+    <div class="cart-drawer__footer" id="cartFooter" style="display:none;">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">$0</span>
+      </div>
+      <div class="cart-subtotal">
+        <span>Shipping</span>
+        <span style="color:var(--clr-accent);">Free</span>
+      </div>
+      <div class="cart-subtotal cart-subtotal--total">
+        <span>Total</span>
+        <span id="cartTotal">$0</span>
+      </div>
+      <div class="cart-drawer__checkout">
+        <button class="btn btn--full">Proceed to Checkout</button>
+        <span class="cart-drawer__continue" id="continueShopping">← Continue Shopping</span>
+      </div>
+    </div>
+  </div>
+
+    <script src="{% static 'js/hoop.js' %}"></script>
+</body>
+</html>
+
+

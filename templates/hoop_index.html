@@ -1,0 +1,88 @@
+{% extends 'hoop_base.html' %}
+{% load static %}
+
+
+{% block content %}
+<!-- ══════════════════════════════════════════════════════════
+       BLOCK 3: HERO SECTION
+       ══════════════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+
+    <div class="hero__text">
+      <p class="hero__eyebrow">Season 2025 — New Arrivals</p>
+      <h1 class="hero__title">
+        Built for<br><em>Champions</em>
+      </h1>
+      <p class="hero__desc">
+        Pro-grade basketball gear worn by the best. From the court to the streets — shoes, jerseys, and training equipment that perform at every level.
+      </p>
+      <div class="hero__cta">
+        <a href="#products" class="btn">Shop New Drops</a>
+        <a href="#categories" class="btn btn--outline">Browse Categories</a>
+      </div>
+      <div class="hero__trust">
+        <div class="trust-item"><span>✅</span> Free returns</div>
+        <div class="trust-item"><span>🏀</span> Pro-tested gear</div>
+        <div class="trust-item"><span>⭐</span> 4.9 / 5 rating</div>
+      </div>
+    </div>
+
+    <div class="hero__image">
+      <img
+        src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=900&auto=format&fit=crop"
+        alt="Basketball court at night with dramatic lighting"
+      />
+      <div class="hero__number">23</div>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 4: PROMO STRIP
+       ══════════════════════════════════════════════════════════ -->
+  <div class="promo-strip">
+    <div class="container">
+      <div class="promo-strip__grid">
+
+        <div class="promo-item">
+          <span class="promo-item__icon">🚚</span>
+          <div>
+            <div class="promo-item__title">Free Shipping</div>
+            <div class="promo-item__desc">On all orders over $80</div>
+          </div>
+        </div>
+
+        <div class="promo-item">
+          <span class="promo-item__icon">↩️</span>
+          <div>
+            <div class="promo-item__title">Easy Returns</div>
+            <div class="promo-item__desc">30-day no-hassle returns</div>
+          </div>
+        </div>
+
+        <div class="promo-item">
+          <span class="promo-item__icon">🏆</span>
+          <div>
+            <div class="promo-item__title">Pro-Grade Quality</div>
+            <div class="promo-item__desc">Used by division-level athletes</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+{% include 'hoop_categories.html' %}
+{% include 'hoop_product.html' %}
+{% include 'hoop_banner.html' %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

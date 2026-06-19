@@ -1,0 +1,570 @@
+{% extends 'shopbase.html' %}
+{% load static %}
+{% block content %}
+<!-- ============================================================
+     BODY
+     ============================================================ -->
+<body>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 1: ANNOUNCEMENT BAR
+       Thin top bar for promotions or shipping info.
+       ══════════════════════════════════════════════════════════ -->
+  <div class="announcement" id="announcement">
+    🚚 &nbsp; Free shipping on all orders over $75 — Use code <strong>LUMINARY10</strong> for 10% off your first order
+    <button class="announcement__close" id="announcementClose" aria-label="Close announcement">✕</button>
+  </div>
+  <!-- END ANNOUNCEMENT BAR -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 2: HEADER
+       Logo, search bar, icons, and category sub-nav.
+       ══════════════════════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header__inner">
+
+        <!-- Logo -->
+        <a href="#" class="header__logo">Luminary</a>
+
+        <!-- Search bar -->
+        <div class="header__search">
+          <span class="header__search-icon">🔍</span>
+          <input type="search" placeholder="Search for products, brands…" aria-label="Search" />
+        </div>
+
+        <!-- Icon buttons: wishlist, account, cart -->
+        <div class="header__icons">
+          <button class="icon-btn" aria-label="Wishlist" title="Wishlist">♡</button>
+          <button class="icon-btn" aria-label="Account" title="My account">👤</button>
+          <!-- Cart button — JS opens the cart drawer -->
+          <button class="icon-btn" id="cartToggle" aria-label="Shopping cart">
+            🛒
+            <span class="icon-btn__badge" id="cartBadge">0</span>
+          </button>
+          <!-- Mobile hamburger (visible on small screens) -->
+          <button class="nav__toggle" id="navToggle" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Sub-navigation: category links -->
+      <nav class="subnav" aria-label="Category navigation">
+        <ul class="subnav__list">
+          <li><a class="subnav__link active" href="#products">All Products</a></li>
+          <li><a class="subnav__link" href="#categories">Living Room</a></li>
+          <li><a class="subnav__link" href="#categories">Bedroom</a></li>
+          <li><a class="subnav__link" href="#categories">Kitchen</a></li>
+          <li><a class="subnav__link" href="#categories">Lighting</a></li>
+          <li><a class="subnav__link" href="#banner">Sale 🔥</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END HEADER -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 3: HERO SECTION
+       Split-screen layout: copy on left, product image on right.
+       ══════════════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+
+    <!-- Left panel: text and CTA -->
+    <div class="hero__text">
+      <p class="hero__eyebrow">New Arrivals — Spring 2025</p>
+      <h1 class="hero__title">
+        Home is Where<br>the Story Lives
+      </h1>
+      <p class="hero__desc">
+        Thoughtfully designed objects for the spaces where you spend your life.
+        Sustainably sourced, built to last, made to be noticed.
+      </p>
+      <div class="hero__cta">
+        <a href="#products" class="btn btn--accent">Shop New Arrivals</a>
+        <a href="#categories" class="btn btn--outline">Browse Categories</a>
+      </div>
+      <div class="hero__trust">
+        <div class="trust-item"><span>✅</span> Free returns</div>
+        <div class="trust-item"><span>🌿</span> Eco-friendly</div>
+        <div class="trust-item"><span>⭐</span> 4.9 / 5 rating</div>
+      </div>
+    </div>
+
+    <!-- Right panel: image -->
+    <div class="hero__image">
+      <img
+        src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=900&auto=format&fit=crop"
+        alt="Modern sofa in a bright living room"
+      />
+    </div>
+
+  </section>
+  <!-- END HERO -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 4: PROMO STRIP
+       Trust-building strip with free shipping, returns, etc.
+       ══════════════════════════════════════════════════════════ -->
+  <div class="promo-strip">
+    <div class="container">
+      <div class="promo-strip__grid">
+
+        <div class="promo-item">
+          <span class="promo-item__icon">🚚</span>
+          <div>
+            <div class="promo-item__title">Free Shipping</div>
+            <div class="promo-item__desc">On all orders over $75</div>
+          </div>
+        </div>
+
+        <div class="promo-item">
+          <span class="promo-item__icon">↩️</span>
+          <div>
+            <div class="promo-item__title">Easy Returns</div>
+            <div class="promo-item__desc">30-day hassle-free returns</div>
+          </div>
+        </div>
+
+        <div class="promo-item">
+          <span class="promo-item__icon">🔒</span>
+          <div>
+            <div class="promo-item__title">Secure Checkout</div>
+            <div class="promo-item__desc">256-bit SSL encryption</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- END PROMO STRIP -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 5: CATEGORIES SECTION
+       Image cards, one per product category.
+       ══════════════════════════════════════════════════════════ -->
+  <section class="categories section-pad" id="categories">
+    <div class="container">
+
+      <p class="section-label">Browse by Room</p>
+      <h2 class="section-title">Shop by Category</h2>
+      <div class="divider" style="margin-bottom: var(--space-lg);"></div>
+
+      <div class="categories__grid">
+
+        <div class="cat-card">
+          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&auto=format&fit=crop" alt="Living room" loading="lazy" />
+          <div class="cat-card__overlay">
+            <div class="cat-card__name">Living Room</div>
+            <div class="cat-card__count">142 products</div>
+            <div class="cat-card__arrow">→</div>
+          </div>
+        </div>
+
+        <div class="cat-card">
+          <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=500&auto=format&fit=crop" alt="Bedroom" loading="lazy" />
+          <div class="cat-card__overlay">
+            <div class="cat-card__name">Bedroom</div>
+            <div class="cat-card__count">98 products</div>
+            <div class="cat-card__arrow">→</div>
+          </div>
+        </div>
+
+        <div class="cat-card">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&auto=format&fit=crop" alt="Kitchen" loading="lazy" />
+          <div class="cat-card__overlay">
+            <div class="cat-card__name">Kitchen</div>
+            <div class="cat-card__count">76 products</div>
+            <div class="cat-card__arrow">→</div>
+          </div>
+        </div>
+
+        <div class="cat-card">
+          <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500&auto=format&fit=crop" alt="Lighting" loading="lazy" />
+          <div class="cat-card__overlay">
+            <div class="cat-card__name">Lighting</div>
+            <div class="cat-card__count">54 products</div>
+            <div class="cat-card__arrow">→</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END CATEGORIES -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 6: FEATURED PRODUCTS SECTION
+       Filterable product card grid with "Add to Cart".
+       ══════════════════════════════════════════════════════════ -->
+  <section class="products section-pad" id="products">
+    <div class="container">
+
+      <div class="products__header">
+        <div>
+          <p class="section-label">Curated Selection</p>
+          <h2 class="section-title" style="margin-bottom: 0;">Featured Products</h2>
+        </div>
+        <a href="#" class="btn btn--outline btn--sm">View All →</a>
+      </div>
+
+      <!-- Filter chips — JS handles show/hide -->
+      <div class="products__filters" role="group" aria-label="Filter products">
+        <button class="filter-chip active" data-filter="all">All</button>
+        <button class="filter-chip" data-filter="furniture">Furniture</button>
+        <button class="filter-chip" data-filter="lighting">Lighting</button>
+        <button class="filter-chip" data-filter="decor">Decor</button>
+        <button class="filter-chip" data-filter="textiles">Textiles</button>
+      </div>
+
+      <!-- Product cards grid -->
+      <div class="products__grid" id="productsGrid">
+
+        <!-- Product 1 -->
+        <div class="prod-card" data-category="furniture">
+          <span class="prod-card__badge prod-card__badge--new">New</span>
+          <button class="prod-card__wish" data-wish aria-label="Add to wishlist">♡</button>
+          <div class="prod-card__image-wrap">
+            <img class="prod-card__image"
+              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&auto=format&fit=crop"
+              alt="Linen Lounge Chair" loading="lazy" />
+          </div>
+          <div class="prod-card__body">
+            <div class="prod-card__category">Furniture</div>
+            <div class="prod-card__name">Linen Lounge Chair</div>
+            <div class="prod-card__stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              <span class="prod-card__review-count">(128)</span>
+            </div>
+            <div class="prod-card__prices">
+              <span class="prod-card__price">$349</span>
+            </div>
+          </div>
+          <div style="padding: 0 var(--space-md) var(--space-md);">
+            <button class="btn btn--accent btn--full add-to-cart"
+              data-name="Linen Lounge Chair"
+              data-price="349"
+              data-img="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=80&auto=format&fit=crop">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="prod-card" data-category="lighting">
+          <span class="prod-card__badge prod-card__badge--sale">−20%</span>
+          <button class="prod-card__wish" data-wish aria-label="Add to wishlist">♡</button>
+          <div class="prod-card__image-wrap">
+            <img class="prod-card__image"
+              src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500&auto=format&fit=crop"
+              alt="Arc Floor Lamp" loading="lazy" />
+          </div>
+          <div class="prod-card__body">
+            <div class="prod-card__category">Lighting</div>
+            <div class="prod-card__name">Arc Floor Lamp</div>
+            <div class="prod-card__stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star" style="color:var(--clr-border)">★</span>
+              <span class="prod-card__review-count">(84)</span>
+            </div>
+            <div class="prod-card__prices">
+              <span class="prod-card__price">$199</span>
+              <span class="prod-card__was">$249</span>
+            </div>
+          </div>
+          <div style="padding: 0 var(--space-md) var(--space-md);">
+            <button class="btn btn--accent btn--full add-to-cart"
+              data-name="Arc Floor Lamp"
+              data-price="199"
+              data-img="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=80&auto=format&fit=crop">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="prod-card" data-category="decor">
+          <button class="prod-card__wish" data-wish aria-label="Add to wishlist">♡</button>
+          <div class="prod-card__image-wrap">
+            <img class="prod-card__image"
+              src="https://images.unsplash.com/photo-1616627428051-e6a1ffb9f49b?w=500&auto=format&fit=crop"
+              alt="Ceramic Vase Set" loading="lazy" />
+          </div>
+          <div class="prod-card__body">
+            <div class="prod-card__category">Decor</div>
+            <div class="prod-card__name">Ceramic Vase Set</div>
+            <div class="prod-card__stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              <span class="prod-card__review-count">(211)</span>
+            </div>
+            <div class="prod-card__prices">
+              <span class="prod-card__price">$89</span>
+            </div>
+          </div>
+          <div style="padding: 0 var(--space-md) var(--space-md);">
+            <button class="btn btn--accent btn--full add-to-cart"
+              data-name="Ceramic Vase Set"
+              data-price="89"
+              data-img="https://images.unsplash.com/photo-1616627428051-e6a1ffb9f49b?w=80&auto=format&fit=crop">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="prod-card" data-category="textiles">
+          <span class="prod-card__badge prod-card__badge--hot">Hot</span>
+          <button class="prod-card__wish" data-wish aria-label="Add to wishlist">♡</button>
+          <div class="prod-card__image-wrap">
+            <img class="prod-card__image"
+              src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=500&auto=format&fit=crop"
+              alt="Woven Throw Blanket" loading="lazy" />
+          </div>
+          <div class="prod-card__body">
+            <div class="prod-card__category">Textiles</div>
+            <div class="prod-card__name">Woven Throw Blanket</div>
+            <div class="prod-card__stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              <span class="prod-card__review-count">(319)</span>
+            </div>
+            <div class="prod-card__prices">
+              <span class="prod-card__price">$65</span>
+            </div>
+          </div>
+          <div style="padding: 0 var(--space-md) var(--space-md);">
+            <button class="btn btn--accent btn--full add-to-cart"
+              data-name="Woven Throw Blanket"
+              data-price="65"
+              data-img="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=80&auto=format&fit=crop">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="prod-card" data-category="furniture">
+          <button class="prod-card__wish" data-wish aria-label="Add to wishlist">♡</button>
+          <div class="prod-card__image-wrap">
+            <img class="prod-card__image"
+              src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&auto=format&fit=crop"
+              alt="Walnut Coffee Table" loading="lazy" />
+          </div>
+          <div class="prod-card__body">
+            <div class="prod-card__category">Furniture</div>
+            <div class="prod-card__name">Walnut Coffee Table</div>
+            <div class="prod-card__stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star" style="color:var(--clr-border)">★</span>
+              <span class="prod-card__review-count">(57)</span>
+            </div>
+            <div class="prod-card__prices">
+              <span class="prod-card__price">$529</span>
+            </div>
+          </div>
+          <div style="padding: 0 var(--space-md) var(--space-md);">
+            <button class="btn btn--accent btn--full add-to-cart"
+              data-name="Walnut Coffee Table"
+              data-price="529"
+              data-img="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=80&auto=format&fit=crop">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="prod-card" data-category="decor">
+          <span class="prod-card__badge prod-card__badge--sale">−15%</span>
+          <button class="prod-card__wish" data-wish aria-label="Add to wishlist">♡</button>
+          <div class="prod-card__image-wrap">
+            <img class="prod-card__image"
+              src="https://images.unsplash.com/photo-1538688423619-a81d3f23454b?w=500&auto=format&fit=crop"
+              alt="Framed Abstract Print" loading="lazy" />
+          </div>
+          <div class="prod-card__body">
+            <div class="prod-card__category">Decor</div>
+            <div class="prod-card__name">Framed Abstract Print</div>
+            <div class="prod-card__stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              <span class="prod-card__review-count">(143)</span>
+            </div>
+            <div class="prod-card__prices">
+              <span class="prod-card__price">$119</span>
+              <span class="prod-card__was">$139</span>
+            </div>
+          </div>
+          <div style="padding: 0 var(--space-md) var(--space-md);">
+            <button class="btn btn--accent btn--full add-to-cart"
+              data-name="Framed Abstract Print"
+              data-price="119"
+              data-img="https://images.unsplash.com/photo-1538688423619-a81d3f23454b?w=80&auto=format&fit=crop">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+      </div>
+      <!-- END products__grid -->
+
+    </div>
+  </section>
+  <!-- END PRODUCTS -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 7: PROMOTIONAL BANNER
+       Sale banner with a live countdown timer.
+       ══════════════════════════════════════════════════════════ -->
+  <section class="banner section-pad" id="banner">
+    <div class="container">
+      <div class="banner__inner">
+
+        <span class="banner__tag">Limited Time Offer</span>
+        <h2 class="banner__title">Up to 40% Off<br>Seasonal Furniture</h2>
+        <p class="banner__desc">
+          Our biggest sale of the year ends soon. Stock is limited — don't miss
+          your chance to upgrade your space.
+        </p>
+
+        <!-- Countdown timer — JS updates these numbers every second -->
+        <div class="banner__countdown" id="countdown">
+          <div class="countdown-unit">
+            <div class="countdown-unit__num" id="cd-hours">08</div>
+            <div class="countdown-unit__label">Hours</div>
+          </div>
+          <div class="countdown-unit">
+            <div class="countdown-unit__num" id="cd-minutes">45</div>
+            <div class="countdown-unit__label">Minutes</div>
+          </div>
+          <div class="countdown-unit">
+            <div class="countdown-unit__num" id="cd-seconds">00</div>
+            <div class="countdown-unit__label">Seconds</div>
+          </div>
+        </div>
+
+        <a href="#products" class="btn" style="background:#fff; color:var(--clr-dark); border-color:#fff;">
+          Shop the Sale →
+        </a>
+
+      </div>
+    </div>
+  </section>
+  <!-- END BANNER -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 8: TESTIMONIALS SECTION
+       Customer reviews with verified purchase badges.
+       ══════════════════════════════════════════════════════════ -->
+  <section class="testimonials section-pad" id="testimonials">
+    <div class="container">
+      <div class="testimonials__header">
+        <p class="section-label">Customer Reviews</p>
+        <h2 class="section-title">Real Homes, Real Opinions</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="testimonials__grid">
+
+        <div class="testi-card">
+          <div class="testi-card__stars">★★★★★</div>
+          <p class="testi-card__quote">
+            The Linen Lounge Chair is even more beautiful in person. The fabric is soft,
+            the frame is solid, and it arrived perfectly packaged. Worth every penny.
+          </p>
+          <span class="testi-card__product">Linen Lounge Chair</span>
+          <div class="testi-card__author">
+            <img class="testi-card__avatar" src="https://i.pravatar.cc/80?img=5" alt="Maya R." loading="lazy" />
+            <div>
+              <div class="testi-card__name">Maya R.</div>
+              <div class="testi-card__location">Seattle, WA</div>
+              <div class="testi-card__verified">✔ Verified Purchase</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-card__stars">★★★★★</div>
+          <p class="testi-card__quote">
+            Ordered the Ceramic Vase Set as a housewarming gift and the recipient was
+            absolutely delighted. Packaging was gorgeous — felt like a luxury unboxing.
+          </p>
+          <span class="testi-card__product">Ceramic Vase Set</span>
+          <div class="testi-card__author">
+            <img class="testi-card__avatar" src="https://i.pravatar.cc/80?img=22" alt="James L." loading="lazy" />
+            <div>
+              <div class="testi-card__name">James L.</div>
+              <div class="testi-card__location">Austin, TX</div>
+              <div class="testi-card__verified">✔ Verified Purchase</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-card__stars">★★★★☆</div>
+          <p class="testi-card__quote">
+            Love the Arc Floor Lamp — warm light, minimal design, exactly what my reading
+            corner needed. Slight delay in shipping, but customer service was very helpful.
+          </p>
+          <span class="testi-card__product">Arc Floor Lamp</span>
+          <div class="testi-card__author">
+            <img class="testi-card__avatar" src="https://i.pravatar.cc/80?img=44" alt="Priya S." loading="lazy" />
+            <div>
+              <div class="testi-card__name">Priya S.</div>
+              <div class="testi-card__location">London, UK</div>
+              <div class="testi-card__verified">✔ Verified Purchase</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END TESTIMONIALS -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       BLOCK 9: NEWSLETTER SECTION
+       Email signup with a success message.
+       ══════════════════════════════════════════════════════════ -->
+  <section class="newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter__inner">
+
+        <p class="section-label" style="text-align:center;">Stay in the Loop</p>
+        <h2 class="newsletter__title">Get 10% Off Your First Order</h2>
+        <p class="newsletter__desc">
+          Subscribe for new arrivals, exclusive offers, and interior inspiration
+          delivered straight to your inbox.
+        </p>
+
+        <form class="newsletter__form" id="newsletterForm" novalidate>
+          <input
+            class="newsletter__input"
+            type="email"
+            id="newsletterEmail"
+            placeholder="your@email.com"
+            required
+          />
+          <button type="submit" class="btn btn--accent newsletter__btn">Subscribe</button>
+        </form>
+
+        <p class="newsletter__success" id="newsletterSuccess">
+          🎉 You're in! Check your inbox for your 10% discount code.
+        </p>
+
+        <div class="newsletter__perks">
+          <span class="newsletter__perk">✓ No spam, ever</span>
+          <span class="newsletter__perk">✓ Unsubscribe anytime</span>
+          <span class="newsletter__perk">✓ 14K+ subscribers</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END NEWSLETTER -->
+{% endblock %}
